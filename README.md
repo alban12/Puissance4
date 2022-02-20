@@ -1,5 +1,5 @@
 # Puissance4 
-AI Solver for the Connect4 (Puissance4).
+A playable Connect4 with AI state-of-the-art agents implemented for differents level of difficulties.
 
 # Installation 
 
