@@ -108,7 +108,7 @@ public class Main extends Application
 	    //---------Defining the game Scene 
 	    GridPane board = new GridPane();
     	board.setStyle("-fx-background-color: #000b3d");
-    	//Ajouter les eventHandler sur les colonnes
+    	// Add the event handler on the columns
     	board.setOnMouseClicked(e -> {
     		if (e.getX()>=0 && e.getX()<=100)
     		{
@@ -143,7 +143,7 @@ public class Main extends Application
     	for(int col=0;col<7;col++) {
     		for(int row=0;row<6;row++)
     		{
-    			//Ajouter les ronds à la grille 
+    			// Add circle on the grid
     			Circle circle = new Circle();
     			circle.setCenterX(100.0f);
     			circle.setCenterY(100.0f);
@@ -152,15 +152,13 @@ public class Main extends Application
     			board.add(circle, col, row);
     		}
     	}   	
-    	//Ajouter les animations 
+    	//TODO: Add animations
     	
     	
     	
 	    gameScene = new Scene(board, 700,600);
 	    
-	    
-	    
-	    //Start the show
+	    // Launch the game
 	    stage.setScene( introScene );
 	    stage.show();
 		
