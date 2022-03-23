@@ -22,10 +22,6 @@ import javafx.stage.Stage;
 import fr.dauphine.albantiacoh.puissance4.model.Player;
 import fr.dauphine.albantiacoh.puissance4.controller.ViewController;;
 
-/**
- * Hello world!
- *
- */
 public class Main extends Application
 {
 	private Stage window;
@@ -44,7 +40,7 @@ public class Main extends Application
 		
 		window = stage;
 		
-		//Set the scene
+		// Set the scene
 		BorderPane mainPane = new BorderPane();
 	    FlowPane optionPane = new FlowPane();
 	    HBox startPane = new HBox();
@@ -54,12 +50,12 @@ public class Main extends Application
 	    
 	    
      
-	    //Designing the tile with canvas 
+	    // Designing the tile with canvas 
 	    Canvas canvas = new Canvas( 500, 200 );
 	    //mainPane.getChildren().add( canvas );
 	    
 	   
-	    //Getting the title right
+	    // Setting the title with the correct style
 	    GraphicsContext gc = canvas.getGraphicsContext2D();
 	    gc.setFill( Color.BLUE );
 	    gc.setStroke( Color.WHITE );
@@ -69,31 +65,32 @@ public class Main extends Application
 	    gc.fillText( "Puissance 4", 60, 50 );
 	    gc.strokeText( "Puissance 4", 60, 50 );
 	    
-	    //First player options 
+	    // First player options 
 	    ComboBox<Player> comboBoxP1 = new ComboBox<Player>();
 	    comboBoxP1.getItems().addAll(new Player("Human"),new Player("Minimax"),new Player("MonteCarlo"));
 	    optionPane.getChildren().add(new Label("First Player:"));
 	    optionPane.getChildren().add(comboBoxP1);
 	    
-	    //Second player options 
+	    // Second player options 
 	    ComboBox<Player> comboBoxP2 = new ComboBox<Player>();
 	    comboBoxP2.getItems().addAll(new Player("Human"),new Player("Minimax"),new Player("MonteCarlo"));
 	    optionPane.getChildren().add(new Label("Second Player:"));
 	    optionPane.getChildren().add(comboBoxP2);
 	    
-	    //Start Button 
+	    // Start Button 
 	    Button start = new Button("Start the game");
 	    Label humanRule = new Label("A human player got to click on the columns to drop a piece");
 	    startPane.getChildren().addAll(start,humanRule);
 	    Player p1=comboBoxP1.getValue();
 	    Player p2=comboBoxP2.getValue();
 	    
+	    // Event handler for the click on the start button
 	    start.setOnAction(e -> {
-	    	game = new Game(6, 7, 4,p1,p2);
+	    	Game game = new Game(6, 7, 4,p1,p2);
 	    	game.start();
 	        window.setScene(gameScene);
 	    });
-
+	    
 	    startPane.setAlignment(Pos.CENTER);
 	    startPane.setSpacing(10);
 	    startPane.setPadding(new Insets(35, 32, 35, 32));
