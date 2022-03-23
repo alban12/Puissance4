@@ -35,4 +35,14 @@ public class AppTest
     {
         assertTrue( true );
     }
+    
+    public void testGameOver()
+    {
+    	
+    }
+    
+    public void testNoMoveLeft()
+    {
+    	
+    }
 }
