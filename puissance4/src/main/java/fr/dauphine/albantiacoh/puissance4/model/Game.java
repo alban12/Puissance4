@@ -23,17 +23,8 @@ public class Game {
 	
 	public void start()
 	{
-		//do 
-		//{
-			//Switch player to know if it is a human, so you wait for the viewController to give the move to put 
-			int action_played = player1.action(board);
-			board.add_piece(action_played,1);
-			//viewController.updateSceneWith(action_played)
-			
-			//Agent takes turn make choice of col to drop  
-			//board.drop_piece(col, piece);
-		//} while() //There is still no winner, and you still can drop a piece 
-		//gameResult=....
+		// Succession of plays 
+		// Use the method from the board, which knows if there is space for another piece to be played 
 	}
 
 
