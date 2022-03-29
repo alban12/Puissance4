@@ -1,4 +1,4 @@
-package fr.dauphine.albantiacoh.puissance4;
+package fr.dauphine.albantiacoh.puissance4.view;
 
 import fr.dauphine.albantiacoh.puissance4.model.Game;
 import javafx.application.Application;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.dauphine.albantiacoh.puissance4;
+package fr.dauphine.albantiacoh.puissance4.view;
 
 import javafx.scene.layout.Pane;
 
