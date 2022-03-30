@@ -105,11 +105,24 @@ public class Main extends Application
 	    //---------Defining the game Scene 
 	    GridPane board = new GridPane();
     	board.setStyle("-fx-background-color: #000b3d");
+    	// Add base circles on the grid
+    	for(int col=0;col<7;col++) {
+    		for(int row=0;row<6;row++)
+    		{
+    			Circle circle = new Circle();
+    			circle.setCenterX(100.0f);
+    			circle.setCenterY(100.0f);
+    			circle.setRadius(50.0f);
+    			circle.setStyle("-fx-background-color: #000b2a; -fx-border-width: 1; -fx-border-color: #022759 ");
+    			board.add(circle, col, row);
+    		}
+    	}  
     	// Add the event handler on the columns
     	board.setOnMouseClicked(e -> {
     		if (e.getX()>=0 && e.getX()<=100)
     		{
     			System.out.println("col 1");
+    			// Verify that a piece is droppable is yes, Drop a piece in col 1 
     		}
     		else if (e.getX()>100 && e.getX()<=200)
     		{
@@ -136,19 +149,7 @@ public class Main extends Application
     			drop_piece(p1,7);
     		}
     	}
-    	);
-    	for(int col=0;col<7;col++) {
-    		for(int row=0;row<6;row++)
-    		{
-    			// Add circle on the grid
-    			Circle circle = new Circle();
-    			circle.setCenterX(100.0f);
-    			circle.setCenterY(100.0f);
-    			circle.setRadius(50.0f);
-    			circle.setStyle("-fx-background-color: #000b2a; -fx-border-width: 1; -fx-border-color: #022759 ");
-    			board.add(circle, col, row);
-    		}
-    	}   	
+    	); 	
     	//TODO: Add animations
     	
     	
