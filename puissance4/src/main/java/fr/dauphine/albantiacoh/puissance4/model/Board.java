@@ -22,7 +22,7 @@ public class Board {
 		return 0;
 	}
 	
-	public void drop_piece(int col,Mark piece)
+	public void drop_piece(int col, Mark piece)
 	{
 		
 	}

@@ -16,7 +16,7 @@ public class Game {
 	
 	public Game(int col,int row,int inarow,Player player1,Player player2)
 	{
-		board = new Board(col,row);
+		setBoard(new Board(col,row));
 		this.inarow=inarow;
 	}
 	
@@ -41,6 +41,16 @@ public class Game {
 	 */
 	public void setInarow(int inarow) {
 		this.inarow = inarow;
+	}
+
+
+	public Board getBoard() {
+		return board;
+	}
+
+
+	public void setBoard(Board board) {
+		this.board = board;
 	}
 
 }

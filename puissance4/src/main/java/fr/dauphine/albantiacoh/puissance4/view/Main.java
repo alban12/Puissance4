@@ -1,6 +1,7 @@
 package fr.dauphine.albantiacoh.puissance4.view;
 
 import fr.dauphine.albantiacoh.puissance4.model.Game;
+import fr.dauphine.albantiacoh.puissance4.model.Mark;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -40,7 +41,7 @@ public class Main extends Application
 		
 		window = stage;
 		
-		// Set the scene
+		// Set the initial scene
 		BorderPane mainPane = new BorderPane();
 	    FlowPane optionPane = new FlowPane();
 	    HBox startPane = new HBox();
@@ -80,15 +81,15 @@ public class Main extends Application
 	    // Start Button 
 	    Button start = new Button("Start the game");
 	    Label humanRule = new Label("A human player got to click on the columns to drop a piece");
-	    startPane.getChildren().addAll(start,humanRule);
+	    startPane.getChildren().addAll(start, humanRule);
 	    Player p1=comboBoxP1.getValue();
 	    Player p2=comboBoxP2.getValue();
 	    
 	    // Event handler for the click on the start button
 	    start.setOnAction(e -> {
-	    	Game game = new Game(6, 7, 4,p1,p2);
+	    	Game game = new Game(6, 7, 4, p1, p2);
 	    	game.start();
-	        window.setScene(gameScene);
+	        window.setScene(gameScene); // Define below 
 	    });
 	    
 	    startPane.setAlignment(Pos.CENTER);
@@ -102,7 +103,7 @@ public class Main extends Application
 	    introScene = new Scene( mainPane, 500,500);
 	    
 	    
-	    //---------Defining the game Scene 
+	    //---------Defining the game Scene with a board 
 	    GridPane board = new GridPane();
     	board.setStyle("-fx-background-color: #000b3d");
     	// Add base circles on the grid
@@ -122,7 +123,11 @@ public class Main extends Application
     		if (e.getX()>=0 && e.getX()<=100)
     		{
     			System.out.println("col 1");
-    			// Verify that a piece is droppable is yes, Drop a piece in col 1 
+    			// TODO : Add simplification - Add a counter of action and player 1 is the one 
+    			// with nb_action % 2 == 1 
+    			Mark piece = null;
+				// Verify that a piece is droppable is yes, Drop a piece in col 1 
+    			game.getBoard().drop_piece(0, piece); 
     		}
     		else if (e.getX()>100 && e.getX()<=200)
     		{
@@ -150,10 +155,6 @@ public class Main extends Application
     		}
     	}
     	); 	
-    	//TODO: Add animations
-    	
-    	
-    	
 	    gameScene = new Scene(board, 700,600);
 	    
 	    // Launch the game
