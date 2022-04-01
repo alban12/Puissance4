@@ -18,7 +18,7 @@ public class Agent extends Player {
 	public Board actionBoardPreview(Board board,int col,int player) //Correspond to action from 
 	{
 		Board next_board = board;
-		next_board.add_piece(col, player);
+		// next_board.add_piece(col, player);
 		return next_board;
 	}
 	
