@@ -88,7 +88,7 @@ public class Main extends Application
 	    // Event handler for the click on the start button
 	    start.setOnAction(e -> {
 	    	Game game = new Game(6, 7, 4, p1, p2);
-	    	game.start();
+	    	game.start(); // Intitalize an empty board 
 	        window.setScene(gameScene); // Define below 
 	    });
 	    
@@ -125,7 +125,7 @@ public class Main extends Application
     			System.out.println("col 1");
     			// TODO : Add simplification - Add a counter of action and player 1 is the one 
     			// with nb_action % 2 == 1 
-    			Mark piece = null;
+    			int piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
     			game.getBoard().drop_piece(0, piece); 
     		}
@@ -152,6 +152,10 @@ public class Main extends Application
     		else if (e.getX()>600 && e.getX()<=700)
     		{
     			drop_piece(p1,7);
+    		}
+    		else
+    		{
+    			System.out.println("Out of zone");
     		}
     	}
     	); 	

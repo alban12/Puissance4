@@ -13,18 +13,27 @@ public class Game {
 	private Player player1;
 	private Player player2;
 	private String gameResult;
+	private int nb_action;
+	private int nb_col;
+	private int nb_row;
 	
-	public Game(int col,int row,int inarow,Player player1,Player player2)
+	public Game(int nb_col,int nb_row,int inarow,Player player1,Player player2)
 	{
-		setBoard(new Board(col,row));
-		this.inarow=inarow;
+		this.nb_col = nb_col;
+		this.nb_row = nb_row;
+		this.inarow = inarow;
 	}
 	
 	
 	public void start()
 	{
-		// Succession of plays 
-		// Use the method from the board, which knows if there is space for another piece to be played 
+		setBoard(new Board(this.nb_col, this.nb_row));
+		this.nb_action = 0;
+	}
+	
+	public void play_col(Player player, int col)
+	{
+		this.board.drop_piece(col, this.get_player());
 	}
 
 
@@ -35,6 +44,9 @@ public class Game {
 		return inarow;
 	}
 
+	public int get_player() {
+		return this.nb_action % 2;
+	}
 
 	/**
 	 * @param inarow the inarow to set

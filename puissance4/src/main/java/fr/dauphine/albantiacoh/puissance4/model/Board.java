@@ -10,8 +10,8 @@ package fr.dauphine.albantiacoh.puissance4.model;
 public class Board {
 	private int col;
 	private int row;
-	private Mark[][] representation;
-	private Mark piece;
+	private int[][] representation;
+	private int piece;
 	
 	public Board(int col, int row) {
 		// TODO Auto-generated constructor stub
@@ -22,9 +22,9 @@ public class Board {
 		return 0;
 	}
 	
-	public void drop_piece(int col, Mark piece)
+	public void drop_piece(int col, int piece)
 	{
-		
+		// Go through the whole col until there is a number or no number 
 	}
 	
 	/**
@@ -44,14 +44,14 @@ public class Board {
 	/**
 	 * @return the representation
 	 */
-	public Mark[][] getRepresentation() {
+	public int[][] getRepresentation() {
 		return representation;
 	}
 
 	/**
 	 * @return the piece
 	 */
-	public Mark getPiece() {
+	public int getPiece() {
 		return piece;
 	}
 
@@ -72,29 +72,23 @@ public class Board {
 	/**
 	 * @param representation the representation to set
 	 */
-	public void setRepresentation(Mark[][] representation) {
+	public void setRepresentation(int[][] representation) {
 		this.representation = representation;
 	}
 
 	/**
 	 * @param piece the piece to set
 	 */
-	public void setPiece(Mark piece) {
+	public void setPiece(int piece) {
 		this.piece = piece;
 	}
 
-	public void add_piece(int action_played,int player) {
-		// TODO Auto-generated method stub
-		for(int row=0;row<this.row;row++)
-		{
-			if (this.representation[row][action_played]!=Mark.EMPTY) 
-				{
-					this.representation[row-1][action_played]=Mark.ofPlayer(1);
-				}
-			else if (row==this.row-1)
-			{
-				this.representation[row][action_played]=Mark.ofPlayer(1);
-			}
-		}
-	}
+	/*
+	 * public void add_piece(int action_played,int player) { // TODO Auto-generated
+	 * method stub for(int row=0;row<this.row;row++) { if
+	 * (this.representation[row][action_played]!=Mark.EMPTY) {
+	 * this.representation[row-1][action_played]=Mark.ofPlayer(1); } else if
+	 * (row==this.row-1) { this.representation[row][action_played]=Mark.ofPlayer(1);
+	 * } } }
+	 */
 }
