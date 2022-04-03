@@ -125,33 +125,57 @@ public class Main extends Application
     			System.out.println("col 1");
     			// TODO : Add simplification - Add a counter of action and player 1 is the one 
     			// with nb_action % 2 == 1 
-    			int piece = game.get_player();
+    			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.getBoard().drop_piece(0, piece); 
+    			game.getBoard().drop_piece(0, player_piece); 
+    			game.proceed();
     		}
     		else if (e.getX()>100 && e.getX()<=200)
     		{
     			System.out.println("col 2");
+    			int player_piece = game.get_player();
+				// Verify that a piece is droppable is yes, Drop a piece in col 1 
+    			game.getBoard().drop_piece(1, player_piece); 
+    			game.proceed();
     		}
     		else if (e.getX()>200 && e.getX()<=300)
     		{
     			System.out.println("col 3");
+    			int player_piece = game.get_player();
+				// Verify that a piece is droppable is yes, Drop a piece in col 1 
+    			game.getBoard().drop_piece(2, player_piece); 
+    			game.proceed();
     		}
     		else if (e.getX()>300 && e.getX()<=400)
     		{
     			System.out.println("col 4");
+    			int player_piece = game.get_player();
+				// Verify that a piece is droppable is yes, Drop a piece in col 1 
+    			game.getBoard().drop_piece(3, player_piece); 
+    			game.proceed();
     		}
     		else if (e.getX()>400 && e.getX()<=500)
     		{
     			System.out.println("col 5");
+    			int player_piece = game.get_player();
+				// Verify that a piece is droppable is yes, Drop a piece in col 1 
+    			game.getBoard().drop_piece(4, player_piece); 
+    			game.proceed();
     		}
     		else if (e.getX()>500 && e.getX()<=600)
     		{
     			System.out.println("col 6");
+    			int player_piece = game.get_player();
+				// Verify that a piece is droppable is yes, Drop a piece in col 1 
+    			game.getBoard().drop_piece(5, player_piece); 
+    			game.proceed();
     		}
     		else if (e.getX()>600 && e.getX()<=700)
     		{
-    			drop_piece(p1,7);
+    			int player_piece = game.get_player();
+				// Verify that a piece is droppable is yes, Drop a piece in col 1 
+    			game.getBoard().drop_piece(6, player_piece);
+    			game.proceed();
     		}
     		else
     		{

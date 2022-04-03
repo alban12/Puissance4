@@ -36,6 +36,10 @@ public class Game {
 		this.board.drop_piece(col, this.get_player());
 	}
 
+	
+	public void proceed() {
+		this.nb_action += 1;	
+	}
 
 	/**
 	 * @return the inarow
