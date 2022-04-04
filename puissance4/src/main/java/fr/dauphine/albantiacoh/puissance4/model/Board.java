@@ -15,6 +15,7 @@ public class Board {
 	
 	public Board(int col, int row) {
 		// TODO Auto-generated constructor stub
+		this.representation = new int[col][row];
 	}
 	
 	public int windows_number()

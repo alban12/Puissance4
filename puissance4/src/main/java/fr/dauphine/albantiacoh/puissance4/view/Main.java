@@ -82,8 +82,8 @@ public class Main extends Application
 	    Button start = new Button("Start the game");
 	    Label humanRule = new Label("A human player got to click on the columns to drop a piece");
 	    startPane.getChildren().addAll(start, humanRule);
-	    Player p1=comboBoxP1.getValue();
-	    Player p2=comboBoxP2.getValue();
+	    int p1=0;
+	    int p2=1;
 	    
 	    // Event handler for the click on the start button
 	    start.setOnAction(e -> {
@@ -120,38 +120,34 @@ public class Main extends Application
     	}  
     	// Add the event handler on the columns
     	board.setOnMouseClicked(e -> {
-    		if (e.getX()>=0 && e.getX()<=100)
+    		if (e.getX()>=0 && e.getX()<=100) 
     		{
     			System.out.println("col 1");
     			// TODO : Add simplification - Add a counter of action and player 1 is the one 
     			// with nb_action % 2 == 1 
-    			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.getBoard().drop_piece(0, player_piece); 
+    			game.play_col(0); 
     			game.proceed();
     		}
     		else if (e.getX()>100 && e.getX()<=200)
     		{
     			System.out.println("col 2");
-    			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.getBoard().drop_piece(1, player_piece); 
+    			game.play_col(1); 
     			game.proceed();
     		}
     		else if (e.getX()>200 && e.getX()<=300)
     		{
     			System.out.println("col 3");
-    			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.getBoard().drop_piece(2, player_piece); 
+    			game.play_col(2); 
     			game.proceed();
     		}
     		else if (e.getX()>300 && e.getX()<=400)
     		{
     			System.out.println("col 4");
-    			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.getBoard().drop_piece(3, player_piece); 
+    			game.play_col(3); 
     			game.proceed();
     		}
     		else if (e.getX()>400 && e.getX()<=500)
@@ -159,22 +155,20 @@ public class Main extends Application
     			System.out.println("col 5");
     			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.getBoard().drop_piece(4, player_piece); 
+    			game.play_col(4); 
     			game.proceed();
     		}
     		else if (e.getX()>500 && e.getX()<=600)
     		{
     			System.out.println("col 6");
-    			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.getBoard().drop_piece(5, player_piece); 
+    			game.play_col(5); 
     			game.proceed();
     		}
     		else if (e.getX()>600 && e.getX()<=700)
     		{
-    			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.getBoard().drop_piece(6, player_piece);
+    			game.play_col(6); 
     			game.proceed();
     		}
     		else

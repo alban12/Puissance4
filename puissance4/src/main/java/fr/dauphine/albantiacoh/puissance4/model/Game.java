@@ -17,7 +17,7 @@ public class Game {
 	private int nb_col;
 	private int nb_row;
 	
-	public Game(int nb_col,int nb_row,int inarow,Player player1,Player player2)
+	public Game(int nb_col,int nb_row,int inarow,int player1,int player2)
 	{
 		this.nb_col = nb_col;
 		this.nb_row = nb_row;
@@ -31,7 +31,7 @@ public class Game {
 		this.nb_action = 0;
 	}
 	
-	public void play_col(Player player, int col)
+	public void play_col(int col)
 	{
 		this.board.drop_piece(col, this.get_player());
 	}
