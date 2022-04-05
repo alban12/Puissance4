@@ -51,6 +51,17 @@ public class Game {
 	public int get_player() {
 		return this.nb_action % 2;
 	}
+	
+	public int get_first_available_row(int col) {
+		int[][]  rep = this.board.getRepresentation();
+		for (int i = 0; i < this.nb_col; i++) {
+			if (rep[i][col] == -1) {
+				return i;
+			}
+		}
+		return -1;
+		
+	}
 
 	/**
 	 * @param inarow the inarow to set

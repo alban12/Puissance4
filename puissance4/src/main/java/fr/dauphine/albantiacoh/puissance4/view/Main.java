@@ -2,6 +2,7 @@ package fr.dauphine.albantiacoh.puissance4.view;
 
 import fr.dauphine.albantiacoh.puissance4.model.Game;
 import fr.dauphine.albantiacoh.puissance4.model.Mark;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -123,17 +124,47 @@ public class Main extends Application
     		if (e.getX()>=0 && e.getX()<=100) 
     		{
     			System.out.println("col 1");
-    			// TODO : Add simplification - Add a counter of action and player 1 is the one 
-    			// with nb_action % 2 == 1 
+    			
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.play_col(0); 
-    			game.proceed();
+    			//game.play_col(0);    			
+    			Circle circle = new Circle(); 
+    			circle.setCenterX(100.0f);
+    			circle.setCenterY(100.0f);
+    			circle.setRadius(50.0f);
+    			int player = game.get_player();
+    			if (player == 1) {
+    				circle.setFill(Color.BROWN); 
+    			}
+    			else {
+    				circle.setFill(Color.YELLOW); 
+    			} 
+    			int first_available_row = game.get_first_available_row(0);
+    			if (first_available_row < 0) {
+    				System.out.println("Action unplayable");
+    			}
+    			else {
+    				board.add(circle, 0, first_available_row);
+    			}
+    			//game.proceed();
     		}
     		else if (e.getX()>100 && e.getX()<=200)
     		{
     			System.out.println("col 2");
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
     			game.play_col(1); 
+    			Circle circle = new Circle(); 
+    			circle.setCenterX(100.0f);
+    			circle.setCenterY(100.0f);
+    			circle.setRadius(50.0f);
+    			int player = game.get_player();
+    			if (player == 1) {
+    				circle.setFill(Color.BROWN); 
+    			}
+    			else {
+    				circle.setFill(Color.YELLOW); 
+    			} 
+    			int first_available_row = 5;
+    			board.add(circle, 1, first_available_row);
     			game.proceed();
     		}
     		else if (e.getX()>200 && e.getX()<=300)
@@ -141,6 +172,19 @@ public class Main extends Application
     			System.out.println("col 3");
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
     			game.play_col(2); 
+    			Circle circle = new Circle(); 
+    			circle.setCenterX(100.0f);
+    			circle.setCenterY(100.0f);
+    			circle.setRadius(50.0f);
+    			int player = game.get_player();
+    			if (player == 1) {
+    				circle.setFill(Color.BROWN); 
+    			}
+    			else {
+    				circle.setFill(Color.YELLOW); 
+    			} 
+    			int first_available_row = 5;
+    			board.add(circle, 2, first_available_row);
     			game.proceed();
     		}
     		else if (e.getX()>300 && e.getX()<=400)
@@ -148,6 +192,19 @@ public class Main extends Application
     			System.out.println("col 4");
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
     			game.play_col(3); 
+    			Circle circle = new Circle(); 
+    			circle.setCenterX(100.0f);
+    			circle.setCenterY(100.0f);
+    			circle.setRadius(50.0f);
+    			int player = game.get_player();
+    			if (player == 1) {
+    				circle.setFill(Color.BROWN); 
+    			}
+    			else {
+    				circle.setFill(Color.YELLOW); 
+    			}
+    			int first_available_row = 5;
+    			board.add(circle, 3, first_available_row);
     			game.proceed();
     		}
     		else if (e.getX()>400 && e.getX()<=500)
@@ -156,6 +213,19 @@ public class Main extends Application
     			int player_piece = game.get_player();
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
     			game.play_col(4); 
+    			Circle circle = new Circle(); 
+    			circle.setCenterX(100.0f);
+    			circle.setCenterY(100.0f);
+    			circle.setRadius(50.0f);
+    			int player = game.get_player();
+    			if (player == 1) {
+    				circle.setFill(Color.BROWN); 
+    			}
+    			else {
+    				circle.setFill(Color.YELLOW); 
+    			}
+    			int first_available_row = 5;
+    			board.add(circle, 4, first_available_row);
     			game.proceed();
     		}
     		else if (e.getX()>500 && e.getX()<=600)
@@ -163,12 +233,38 @@ public class Main extends Application
     			System.out.println("col 6");
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
     			game.play_col(5); 
+    			Circle circle = new Circle(); 
+    			circle.setCenterX(100.0f);
+    			circle.setCenterY(100.0f);
+    			circle.setRadius(50.0f);
+    			int player = game.get_player();
+    			if (player == 1) {
+    				circle.setFill(Color.BROWN); 
+    			}
+    			else {
+    				circle.setFill(Color.YELLOW); 
+    			}
+    			int first_available_row = 5;
+    			board.add(circle, 5, first_available_row);
     			game.proceed();
     		}
     		else if (e.getX()>600 && e.getX()<=700)
     		{
 				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			game.play_col(6); 
+    			game.play_col(6);
+    			Circle circle = new Circle(); 
+    			circle.setCenterX(100.0f);
+    			circle.setCenterY(100.0f);
+    			circle.setRadius(50.0f);
+    			int player = game.get_player();
+    			if (player == 1) {
+    				circle.setFill(Color.BROWN); 
+    			}
+    			else {
+    				circle.setFill(Color.YELLOW); 
+    			}
+    			int first_available_row = 5;
+    			board.add(circle, 6, first_available_row);
     			game.proceed();
     		}
     		else
