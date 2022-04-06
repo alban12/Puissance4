@@ -10,17 +10,17 @@ package fr.dauphine.albantiacoh.puissance4.model;
 public class Game {
 	private Board board;
 	private int inarow;
-	private Player player1;
-	private Player player2;
+	private int player1;
+	private int player2;
 	private String gameResult;
 	private int nb_action;
 	private int nb_col;
 	private int nb_row;
 	
-	public Game(int nb_col,int nb_row,int inarow,int player1,int player2)
+	public Game(int nb_row,int nb_col,int inarow,int player1,int player2)
 	{
-		this.nb_col = nb_col;
 		this.nb_row = nb_row;
+		this.nb_col = nb_col;
 		this.inarow = inarow;
 	}
 	
@@ -54,7 +54,7 @@ public class Game {
 	
 	public int get_first_available_row(int col) {
 		int[][]  rep = this.board.getRepresentation();
-		for (int i = 0; i < this.nb_col; i++) {
+		for (int i = this.nb_row - 1; i >= 0; i--) {
 			if (rep[i][col] == -1) {
 				return i;
 			}

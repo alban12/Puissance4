@@ -8,14 +8,21 @@ package fr.dauphine.albantiacoh.puissance4.model;
  *
  */
 public class Board {
-	private int col;
-	private int row;
+	private int nb_col;
+	private int nb_row;
 	private int[][] representation;
 	private int piece;
 	
-	public Board(int col, int row) {
+	public Board(int nb_col, int nb_row) {
 		// TODO Auto-generated constructor stub
-		this.representation = new int[col][row];
+		this.representation = new int[nb_col][nb_row];
+		for (int i = 0; i < nb_col; i++) {
+			for (int j = 0; j < nb_row; j++) {
+				representation[i][j] = -1;
+			}
+		}
+		this.nb_row = nb_row;
+		this.nb_col = nb_col;
 	}
 	
 	public int windows_number()
@@ -25,21 +32,31 @@ public class Board {
 	
 	public void drop_piece(int col, int piece)
 	{
-		// Go through the whole col until there is a number or no number 
+		// int[][]  rep = this.board.getRepresentation();
+		System.out.println(this.representation);
+		System.out.println("In drop piece");
+		for (int i = this.nb_row - 1; i >= 0; i--) {
+			System.out.println(this.representation[i][col]);
+			if (this.representation[i][col] == -1) {
+				this.representation[i][col] = piece;
+				System.out.println(this.representation);
+				return;
+			}
+		}
 	}
 	
 	/**
 	 * @return the col
 	 */
 	public int getCol() {
-		return col;
+		return nb_row;
 	}
 
 	/**
 	 * @return the row
 	 */
 	public int getRow() {
-		return row;
+		return nb_row;
 	}
 
 	/**
@@ -60,14 +77,14 @@ public class Board {
 	 * @param col the col to set
 	 */
 	public void setCol(int col) {
-		this.col = col;
+		this.nb_col = col;
 	}
 
 	/**
 	 * @param row the row to set
 	 */
 	public void setRow(int row) {
-		this.row = row;
+		this.nb_row = row;
 	}
 
 	/**
