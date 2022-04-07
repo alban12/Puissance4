@@ -17,7 +17,7 @@ public class Game {
 	private int nb_col;
 	private int nb_row;
 	
-	public Game(int nb_row,int nb_col,int inarow,int player1,int player2)
+	public Game(int nb_row, int nb_col, int inarow, int player1, int player2)
 	{
 		this.nb_row = nb_row;
 		this.nb_col = nb_col;
@@ -27,7 +27,7 @@ public class Game {
 	
 	public void start()
 	{
-		setBoard(new Board(this.nb_col, this.nb_row));
+		setBoard(new Board(this.nb_row, this.nb_col));
 		this.nb_action = 0;
 	}
 	

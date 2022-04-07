@@ -13,11 +13,11 @@ public class Board {
 	private int[][] representation;
 	private int piece;
 	
-	public Board(int nb_col, int nb_row) {
+	public Board(int nb_row, int nb_col) {
 		// TODO Auto-generated constructor stub
-		this.representation = new int[nb_col][nb_row];
-		for (int i = 0; i < nb_col; i++) {
-			for (int j = 0; j < nb_row; j++) {
+		this.representation = new int[nb_row][nb_col];
+		for (int i = 0; i < nb_row; i++) {
+			for (int j = 0; j < nb_col; j++) {
 				representation[i][j] = -1;
 			}
 		}
