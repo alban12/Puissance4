@@ -147,7 +147,10 @@ public class Main extends Application
     				board.add(circle, 0, first_available_row);
     				game.play_col(0);
     			}
-    			game.proceed();
+    			boolean can_continue = game.proceed();
+    			if (!can_continue) {
+    				
+    			}
     		}
     		else if (e.getX()>100 && e.getX()<=200)
     		{

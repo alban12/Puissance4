@@ -37,8 +37,16 @@ public class Game {
 	}
 
 	
-	public void proceed() {
-		this.nb_action += 1;	
+	public boolean proceed() {
+		this.nb_action += 1;
+		// Check if there is a win 
+		
+		// If the board has a winning position 
+		// return false and set gameResult to ...
+		
+		// If the board has no more space 
+		// return false and set gameResult to : draw
+		return true;
 	}
 
 	/**
