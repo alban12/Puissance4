@@ -43,7 +43,10 @@ public class Game {
 		
 		// If the board has a winning position 
 		// return false and set gameResult to ...
-		
+		if (this.board.areFourConnected(this.get_player())) {
+			this.gameResult = "Player : "+this.get_player()+" has won";
+			return false;
+		}
 		// If the board has no more space 
 		// return false and set gameResult to : draw
 		return true;

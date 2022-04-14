@@ -79,6 +79,55 @@ public class Board {
 	public void setCol(int col) {
 		this.nb_col = col;
 	}
+	
+	public boolean is_terminal() {
+		// Check for win: horizontal, vertical, or diagonal 
+		for (int i = 0; i < nb_row; i++) {
+			for (int j = 0; j < nb_col; j++) {
+				
+			}
+		}
+		
+		
+		return false;
+	}
+	
+	
+	public boolean areFourConnected(int player){
+
+	    // horizontalCheck 
+	    for (int j = 0; j<nb_col-3 ; j++ ){
+	        for (int i = 0; i<nb_row; i++){
+	            if (this.representation[i][j] == player && this.representation[i][j+1] == player && this.representation[i][j+2] == player && this.representation[i][j+3] == player){
+	                return true;
+	            }           
+	        }
+	    }
+	    // verticalCheck
+	    for (int i = 0; i<nb_col-3 ; i++ ){
+	        for (int j = 0; j<nb_row; j++){
+	            if (this.representation[i][j] == player && this.representation[i+1][j] == player && this.representation[i+2][j] == player && this.representation[i+3][j] == player){
+	                return true;
+	            }           
+	        }
+	    }
+	    // ascendingDiagonalCheck 
+	    for (int i=3; i<nb_col; i++){
+	        for (int j=0; j<nb_row-3; j++){
+	            if (this.representation[i][j] == player && this.representation[i-1][j+1] == player && this.representation[i-2][j+2] == player && this.representation[i-3][j+3] == player)
+	                return true;
+	        }
+	    }
+	    // descendingDiagonalCheck
+	    for (int i=3; i<nb_col; i++){
+	        for (int j=3; j<nb_row; j++){
+	            if (this.representation[i][j] == player && this.representation[i-1][j-1] == player && this.representation[i-2][j-2] == player && this.representation[i-3][j-3] == player)
+	                return true;
+	        }
+	    }
+	    return false;
+	}
+	
 
 	/**
 	 * @param row the row to set

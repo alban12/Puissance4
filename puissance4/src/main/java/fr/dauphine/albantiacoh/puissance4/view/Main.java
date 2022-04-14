@@ -149,7 +149,7 @@ public class Main extends Application
     			}
     			boolean can_continue = game.proceed();
     			if (!can_continue) {
-    				
+    				System.out.println("We have a winner");
     			}
     		}
     		else if (e.getX()>100 && e.getX()<=200)
