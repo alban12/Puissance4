@@ -13,6 +13,22 @@ public class Game {
 	private int player1;
 	private int player2;
 	private String gameResult;
+	/**
+	 * @return the gameResult
+	 */
+	public String getGameResult() {
+		return gameResult;
+	}
+
+
+	/**
+	 * @param gameResult the gameResult to set
+	 */
+	public void setGameResult(String gameResult) {
+		this.gameResult = gameResult;
+	}
+
+
 	private int nb_action;
 	private int nb_col;
 	private int nb_row;
@@ -43,6 +59,7 @@ public class Game {
 		// If the board has a winning position 
 		// return false and set gameResult to ...
 		if (this.board.areFourConnected(this.get_player())) {
+			System.out.println("Player : "+this.get_player()+" has won");
 			this.gameResult = "Player : "+this.get_player()+" has won";
 			return false;
 		}

@@ -1,6 +1,7 @@
 package fr.dauphine.albantiacoh.puissance4.view;
 
 import fr.dauphine.albantiacoh.puissance4.model.Game;
+
 import fr.dauphine.albantiacoh.puissance4.model.Mark;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
@@ -20,8 +21,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import fr.dauphine.albantiacoh.puissance4.model.Player;
+
+import java.util.Optional;
+
 import fr.dauphine.albantiacoh.puissance4.controller.ViewController;;
 
 public class Main extends Application
@@ -147,8 +155,8 @@ public class Main extends Application
     				game.play_col(0);
     			}
     			boolean can_continue = game.proceed();
-    			if (!can_continue) {
-    				System.out.println("We have a winner");
+    			if (can_continue == false) {
+    				show_result();
     			}
     		}
     		else if (e.getX()>100 && e.getX()<=200)
@@ -173,7 +181,10 @@ public class Main extends Application
     				board.add(circle, 1, first_available_row);
     				game.play_col(1);
     			}
-    			game.proceed();
+    			boolean can_continue = game.proceed();
+    			if (can_continue == false) {
+    				show_result();
+    			}
     		}
     		else if (e.getX()>200 && e.getX()<=300)
     		{
@@ -197,7 +208,10 @@ public class Main extends Application
     				board.add(circle, 2, first_available_row);
     				game.play_col(2);
     			}
-    			game.proceed();
+    			boolean can_continue = game.proceed();
+    			if (can_continue == false) {
+    				show_result();
+    			}
     		}
     		else if (e.getX()>300 && e.getX()<=400)
     		{
@@ -221,7 +235,10 @@ public class Main extends Application
     				board.add(circle, 3, first_available_row);
     				game.play_col(3);
     			}
-    			game.proceed();
+    			boolean can_continue = game.proceed();
+    			if (can_continue == false) {
+    				show_result();
+    			}
     		}
     		else if (e.getX()>400 && e.getX()<=500)
     		{
@@ -245,7 +262,10 @@ public class Main extends Application
     				board.add(circle, 4, first_available_row);
     				game.play_col(4);
     			}
-    			game.proceed();
+    			boolean can_continue = game.proceed();
+    			if (can_continue == false) {
+    				show_result();
+    			}
     		}
     		else if (e.getX()>500 && e.getX()<=600)
     		{
@@ -269,7 +289,10 @@ public class Main extends Application
     				board.add(circle, 5, first_available_row);
     				game.play_col(5);
     			}
-    			game.proceed();
+    			boolean can_continue = game.proceed();
+    			if (can_continue == false) {
+    				show_result();
+    			}
     		}
     		else if (e.getX()>600 && e.getX()<=700)
     		{
@@ -294,7 +317,10 @@ public class Main extends Application
     				board.add(circle, 6, first_available_row);
     				game.play_col(6);
     			}
-    			game.proceed();
+    			boolean can_continue = game.proceed();
+    			if (can_continue == false) {
+    				show_result();
+    			}
     		}
     		else
     		{
@@ -310,6 +336,18 @@ public class Main extends Application
 		
 	}
 	
+	private void show_result() {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Game result");
+		alert.setContentText(this.game.getGameResult()+"\nThanks for playing!");
+
+		ButtonType buttonTypeOne = new ButtonType("Restart");
+		ButtonType buttonTypeTwo = new ButtonType("Quit");
+
+		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
+		Optional<ButtonType> result = alert.showAndWait();
+		
+	}
 	
 	private void createGameScene() {
 		
