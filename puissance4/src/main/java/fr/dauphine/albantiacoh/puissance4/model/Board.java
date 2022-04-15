@@ -33,8 +33,6 @@ public class Board {
 	public void drop_piece(int col, int piece)
 	{
 		// int[][]  rep = this.board.getRepresentation();
-		System.out.println(this.representation);
-		System.out.println("In drop piece");
 		for (int i = this.nb_row - 1; i >= 0; i--) {
 			System.out.println(this.representation[i][col]);
 			if (this.representation[i][col] == -1) {
@@ -99,28 +97,28 @@ public class Board {
 	    for (int j = 0; j<nb_col-3 ; j++ ){
 	        for (int i = 0; i<nb_row; i++){
 	            if (this.representation[i][j] == player && this.representation[i][j+1] == player && this.representation[i][j+2] == player && this.representation[i][j+3] == player){
-	                return true;
+	            	return true;
 	            }           
 	        }
 	    }
 	    // verticalCheck
-	    for (int i = 0; i<nb_col-3 ; i++ ){
-	        for (int j = 0; j<nb_row; j++){
+	    for (int i = 0; i<nb_row-3 ; i++ ){
+	        for (int j = 0; j<nb_col; j++){
 	            if (this.representation[i][j] == player && this.representation[i+1][j] == player && this.representation[i+2][j] == player && this.representation[i+3][j] == player){
 	                return true;
 	            }           
 	        }
 	    }
 	    // ascendingDiagonalCheck 
-	    for (int i=3; i<nb_col; i++){
-	        for (int j=0; j<nb_row-3; j++){
+	    for (int j=3; j<nb_col; j++){
+	        for (int i=0; i<nb_row-3; i++){
 	            if (this.representation[i][j] == player && this.representation[i-1][j+1] == player && this.representation[i-2][j+2] == player && this.representation[i-3][j+3] == player)
 	                return true;
 	        }
 	    }
 	    // descendingDiagonalCheck
-	    for (int i=3; i<nb_col; i++){
-	        for (int j=3; j<nb_row; j++){
+	    for (int j=3; j<nb_col; j++){
+	        for (int i=3; i<nb_row; i++){
 	            if (this.representation[i][j] == player && this.representation[i-1][j-1] == player && this.representation[i-2][j-2] == player && this.representation[i-3][j-3] == player)
 	                return true;
 	        }

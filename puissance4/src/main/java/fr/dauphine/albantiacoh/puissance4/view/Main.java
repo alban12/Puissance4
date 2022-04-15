@@ -132,7 +132,6 @@ public class Main extends Application
     			circle.setCenterY(100.0f);
     			circle.setRadius(50.0f);
     			int player = this.game.get_player();
-    			System.out.println(player);
     			if (player == 1) {
     				circle.setFill(Color.BROWN); 
     			}
