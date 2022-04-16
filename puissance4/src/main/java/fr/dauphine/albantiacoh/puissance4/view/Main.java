@@ -346,6 +346,32 @@ public class Main extends Application
 
 		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
 		Optional<ButtonType> result = alert.showAndWait();
+		if (result.get() == buttonTypeOne){
+		    // Restart
+		    GridPane board = new GridPane();
+	    	board.setStyle("-fx-background-color: #000b3d");
+	    	// Add base circles on the grid
+	    	for(int col=0;col<7;col++) {
+	    		for(int row=0;row<6;row++)
+	    		{
+	    			Circle circle = new Circle();
+	    			circle.setCenterX(100.0f);
+	    			circle.setCenterY(100.0f);
+	    			circle.setRadius(50.0f);
+	    			circle.setStyle("-fx-background-color: #000b2a; -fx-border-width: 1; -fx-border-color: #022759 ");
+	    			board.add(circle, col, row);
+	    		}
+	    	}  
+	    	gameScene = new Scene(board, 700,600);
+	    	window.setScene(gameScene);
+		    int p1=0;
+		    int p2=1;
+	    	Game game = new Game(6, 7, 4, p1, p2);
+	    	this.game = game;
+	    	this.game.start();
+		} else {
+		    System.exit(0);
+		}
 		
 	}
 	
