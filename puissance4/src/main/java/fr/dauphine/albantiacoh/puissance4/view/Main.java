@@ -156,7 +156,7 @@ public class Main extends Application
     			}
     			boolean can_continue = game.proceed();
     			if (can_continue == false) {
-    				show_result();
+    				show_result(board);
     			}
     		}
     		else if (e.getX()>100 && e.getX()<=200)
@@ -183,7 +183,7 @@ public class Main extends Application
     			}
     			boolean can_continue = game.proceed();
     			if (can_continue == false) {
-    				show_result();
+    				show_result(board);
     			}
     		}
     		else if (e.getX()>200 && e.getX()<=300)
@@ -210,7 +210,7 @@ public class Main extends Application
     			}
     			boolean can_continue = game.proceed();
     			if (can_continue == false) {
-    				show_result();
+    				show_result(board);
     			}
     		}
     		else if (e.getX()>300 && e.getX()<=400)
@@ -237,7 +237,7 @@ public class Main extends Application
     			}
     			boolean can_continue = game.proceed();
     			if (can_continue == false) {
-    				show_result();
+    				show_result(board);
     			}
     		}
     		else if (e.getX()>400 && e.getX()<=500)
@@ -264,7 +264,7 @@ public class Main extends Application
     			}
     			boolean can_continue = game.proceed();
     			if (can_continue == false) {
-    				show_result();
+    				show_result(board);
     			}
     		}
     		else if (e.getX()>500 && e.getX()<=600)
@@ -291,7 +291,7 @@ public class Main extends Application
     			}
     			boolean can_continue = game.proceed();
     			if (can_continue == false) {
-    				show_result();
+    				show_result(board);
     			}
     		}
     		else if (e.getX()>600 && e.getX()<=700)
@@ -319,7 +319,7 @@ public class Main extends Application
     			}
     			boolean can_continue = game.proceed();
     			if (can_continue == false) {
-    				show_result();
+    				show_result(board);
     			}
     		}
     		else
@@ -336,7 +336,7 @@ public class Main extends Application
 		
 	}
 	
-	private void show_result() {
+	private void show_result(GridPane board) {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Game result");
 		alert.setContentText(this.game.getGameResult()+"\nThanks for playing!");
@@ -348,8 +348,6 @@ public class Main extends Application
 		Optional<ButtonType> result = alert.showAndWait();
 		if (result.get() == buttonTypeOne){
 		    // Restart
-		    GridPane board = new GridPane();
-	    	board.setStyle("-fx-background-color: #000b3d");
 	    	// Add base circles on the grid
 	    	for(int col=0;col<7;col++) {
 	    		for(int row=0;row<6;row++)
@@ -362,8 +360,6 @@ public class Main extends Application
 	    			board.add(circle, col, row);
 	    		}
 	    	}  
-	    	gameScene = new Scene(board, 700,600);
-	    	window.setScene(gameScene);
 		    int p1=0;
 		    int p2=1;
 	    	Game game = new Game(6, 7, 4, p1, p2);
