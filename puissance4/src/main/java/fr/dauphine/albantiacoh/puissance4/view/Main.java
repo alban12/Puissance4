@@ -2,7 +2,7 @@ package fr.dauphine.albantiacoh.puissance4.view;
 
 import fr.dauphine.albantiacoh.puissance4.model.Game;
 
-import fr.dauphine.albantiacoh.puissance4.model.Mark;
+
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -347,8 +347,6 @@ public class Main extends Application
 		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
 		Optional<ButtonType> result = alert.showAndWait();
 		if (result.get() == buttonTypeOne){
-		    // Restart
-	    	// Add base circles on the grid
 	    	for(int col=0;col<7;col++) {
 	    		for(int row=0;row<6;row++)
 	    		{

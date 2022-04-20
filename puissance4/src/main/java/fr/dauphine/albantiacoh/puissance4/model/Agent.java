@@ -39,14 +39,14 @@ public class Agent extends Player {
 		//}
 	}
 	
-	public boolean checkWindow(ArrayList<Mark> window,int num_discs,int player,Game game)
+	public boolean checkWindow(ArrayList<Integer> window,int num_discs,int player,Game game)
 	{
 		int piece_number=0;
 		int empty_number=0;
-		for(Mark k : window)
+		for(int k : window)
 		{
-			if (k==Mark.EMPTY) empty_number++;
-			if (k==Mark.ofPlayer(player)) piece_number++;
+			if (k==-1) empty_number++;
+			if (k==player) piece_number++;
 		}
 		return (piece_number == num_discs) && (empty_number==game.getInarow()-num_discs);
 	}
