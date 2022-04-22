@@ -32,9 +32,7 @@ public class Board {
 	
 	public void drop_piece(int col, int piece)
 	{
-		// int[][]  rep = this.board.getRepresentation();
 		for (int i = this.nb_row - 1; i >= 0; i--) {
-			System.out.println(this.representation[i][col]);
 			if (this.representation[i][col] == -1) {
 				this.representation[i][col] = piece;
 				System.out.println(this.representation);
@@ -147,13 +145,4 @@ public class Board {
 	public void setPiece(int piece) {
 		this.piece = piece;
 	}
-
-	/*
-	 * public void add_piece(int action_played,int player) { // TODO Auto-generated
-	 * method stub for(int row=0;row<this.row;row++) { if
-	 * (this.representation[row][action_played]!=Mark.EMPTY) {
-	 * this.representation[row-1][action_played]=Mark.ofPlayer(1); } else if
-	 * (row==this.row-1) { this.representation[row][action_played]=Mark.ofPlayer(1);
-	 * } } }
-	 */
 }

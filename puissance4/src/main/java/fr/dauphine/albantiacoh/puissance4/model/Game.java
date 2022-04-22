@@ -13,6 +13,10 @@ public class Game {
 	private int player1;
 	private int player2;
 	private String gameResult;
+	private int nb_action;
+	private int nb_col;
+	private int nb_row;
+	
 	/**
 	 * @return the gameResult
 	 */
@@ -29,9 +33,7 @@ public class Game {
 	}
 
 
-	private int nb_action;
-	private int nb_col;
-	private int nb_row;
+
 	
 	public Game(int nb_row, int nb_col, int inarow, int player1, int player2)
 	{
