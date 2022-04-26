@@ -133,194 +133,31 @@ public class Main extends Application
     		if (e.getX()>=0 && e.getX()<=100) 
     		{
     			
-				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			//game.play_col(0);    			
-    			Circle circle = new Circle(); 
-    			circle.setCenterX(100.0f);
-    			circle.setCenterY(100.0f);
-    			circle.setRadius(50.0f);
-    			int player = this.game.get_player();
-    			if (player == 1) {
-    				circle.setFill(Color.BROWN); 
-    			}
-    			else {
-    				circle.setFill(Color.YELLOW); 
-    			} 
-    			int first_available_row = this.game.get_first_available_row(0);
-    			if (first_available_row < 0) {
-    				System.out.println("Action unplayable");
-    			}
-    			else {
-    				board.add(circle, 0, first_available_row);
-    				game.play_col(0);
-    			}
-    			boolean can_continue = game.proceed();
-    			if (can_continue == false) {
-    				show_result(board);
-    			}
+    			ui_drop_piece(0, board);
     		}
     		else if (e.getX()>100 && e.getX()<=200)
     		{
-    			Circle circle = new Circle(); 
-    			circle.setCenterX(100.0f);
-    			circle.setCenterY(100.0f);
-    			circle.setRadius(50.0f);
-    			int player = this.game.get_player();
-    			System.out.println(player);
-    			if (player == 1) {
-    				circle.setFill(Color.BROWN); 
-    			}
-    			else {
-    				circle.setFill(Color.YELLOW); 
-    			} 
-    			int first_available_row = this.game.get_first_available_row(1);
-    			if (first_available_row < 0) {
-    				System.out.println("Action unplayable");
-    			}
-    			else {
-    				board.add(circle, 1, first_available_row);
-    				game.play_col(1);
-    			}
-    			boolean can_continue = game.proceed();
-    			if (can_continue == false) {
-    				show_result(board);
-    			}
+    			ui_drop_piece(1, board);
     		}
     		else if (e.getX()>200 && e.getX()<=300)
     		{
-    			Circle circle = new Circle(); 
-    			circle.setCenterX(100.0f);
-    			circle.setCenterY(100.0f);
-    			circle.setRadius(50.0f);
-    			int player = this.game.get_player();
-    			System.out.println(player);
-    			if (player == 1) {
-    				circle.setFill(Color.BROWN); 
-    			}
-    			else {
-    				circle.setFill(Color.YELLOW); 
-    			} 
-    			int first_available_row = this.game.get_first_available_row(2);
-    			if (first_available_row < 0) {
-    				System.out.println("Action unplayable");
-    			}
-    			else {
-    				board.add(circle, 2, first_available_row);
-    				game.play_col(2);
-    			}
-    			boolean can_continue = game.proceed();
-    			if (can_continue == false) {
-    				show_result(board);
-    			}
+    			ui_drop_piece(2, board);
     		}
     		else if (e.getX()>300 && e.getX()<=400)
     		{
-    			Circle circle = new Circle(); 
-    			circle.setCenterX(100.0f);
-    			circle.setCenterY(100.0f);
-    			circle.setRadius(50.0f);
-    			int player = this.game.get_player();
-    			System.out.println(player);
-    			if (player == 1) {
-    				circle.setFill(Color.BROWN); 
-    			}
-    			else {
-    				circle.setFill(Color.YELLOW); 
-    			} 
-    			int first_available_row = this.game.get_first_available_row(3);
-    			if (first_available_row < 0) {
-    				System.out.println("Action unplayable");
-    			}
-    			else {
-    				board.add(circle, 3, first_available_row);
-    				game.play_col(3);
-    			}
-    			boolean can_continue = game.proceed();
-    			if (can_continue == false) {
-    				show_result(board);
-    			}
+    			ui_drop_piece(3, board);
     		}
     		else if (e.getX()>400 && e.getX()<=500)
     		{
-    			Circle circle = new Circle(); 
-    			circle.setCenterX(100.0f);
-    			circle.setCenterY(100.0f);
-    			circle.setRadius(50.0f);
-    			int player = this.game.get_player();
-    			System.out.println(player);
-    			if (player == 1) {
-    				circle.setFill(Color.BROWN); 
-    			}
-    			else {
-    				circle.setFill(Color.YELLOW); 
-    			} 
-    			int first_available_row = this.game.get_first_available_row(4);
-    			if (first_available_row < 0) {
-    				System.out.println("Action unplayable");
-    			}
-    			else {
-    				board.add(circle, 4, first_available_row);
-    				game.play_col(4);
-    			}
-    			boolean can_continue = game.proceed();
-    			if (can_continue == false) {
-    				show_result(board);
-    			}
+    			ui_drop_piece(4, board);
     		}
     		else if (e.getX()>500 && e.getX()<=600)
     		{
-    			Circle circle = new Circle(); 
-    			circle.setCenterX(100.0f);
-    			circle.setCenterY(100.0f);
-    			circle.setRadius(50.0f);
-    			int player = this.game.get_player();
-    			System.out.println(player);
-    			if (player == 1) {
-    				circle.setFill(Color.BROWN); 
-    			}
-    			else {
-    				circle.setFill(Color.YELLOW); 
-    			} 
-    			int first_available_row = this.game.get_first_available_row(5);
-    			if (first_available_row < 0) {
-    				System.out.println("Action unplayable");
-    			}
-    			else {
-    				board.add(circle, 5, first_available_row);
-    				game.play_col(5);
-    			}
-    			boolean can_continue = game.proceed();
-    			if (can_continue == false) {
-    				show_result(board);
-    			}
+    			ui_drop_piece(5, board);
     		}
     		else if (e.getX()>600 && e.getX()<=700)
     		{
-				// Verify that a piece is droppable is yes, Drop a piece in col 1 
-    			Circle circle = new Circle(); 
-    			circle.setCenterX(100.0f);
-    			circle.setCenterY(100.0f);
-    			circle.setRadius(50.0f);
-    			int player = this.game.get_player();
-    			System.out.println(player);
-    			if (player == 1) {
-    				circle.setFill(Color.BROWN); 
-    			}
-    			else {
-    				circle.setFill(Color.YELLOW); 
-    			} 
-    			int first_available_row = this.game.get_first_available_row(6);
-    			if (first_available_row < 0) {
-    				System.out.println("Action unplayable");
-    			}
-    			else {
-    				board.add(circle, 6, first_available_row);
-    				game.play_col(6);
-    			}
-    			boolean can_continue = game.proceed();
-    			if (can_continue == false) {
-    				show_result(board);
-    			}
+    			ui_drop_piece(6, board);
     		}
     		else
     		{
@@ -367,6 +204,34 @@ public class Main extends Application
 		    System.exit(0);
 		}
 		
+	}
+	
+	private void ui_drop_piece(int col, GridPane board) {
+		// Verify that a piece is droppable is yes, Drop a piece in col 1 
+		Circle circle = new Circle(); 
+		circle.setCenterX(100.0f);
+		circle.setCenterY(100.0f);
+		circle.setRadius(50.0f);
+		int player = this.game.get_player();
+		System.out.println(player);
+		if (player == 1) {
+			circle.setFill(Color.BROWN); 
+		}
+		else {
+			circle.setFill(Color.YELLOW); 
+		} 
+		int first_available_row = this.game.get_first_available_row(col);
+		if (first_available_row < 0) {
+			System.out.println("Action unplayable");
+		}
+		else {
+			board.add(circle, col, first_available_row);
+			game.play_col(col);
+		}
+		boolean can_continue = game.proceed();
+		if (can_continue == false) {
+			show_result(board);
+		}
 	}
 	
 	private void createGameScene() {
