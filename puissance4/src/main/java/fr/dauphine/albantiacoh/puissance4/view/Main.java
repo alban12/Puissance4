@@ -58,12 +58,8 @@ public class Main extends Application
 	    optionPane.setVgap(10);
 	    optionPane.setHgap(10);
 	    
-	    
-     
 	    // Designing the tile with canvas 
 	    Canvas canvas = new Canvas( 500, 200 );
-	    //mainPane.getChildren().add( canvas );
-	    
 	   
 	    // Setting the title with the correct style
 	    GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -98,8 +94,8 @@ public class Main extends Application
 	    start.setOnAction(e -> {
 	    	Game game = new Game(6, 7, 4, p1, p2);
 	    	this.game = game;
-	    	this.game.start(); // Intitalize an empty board 
-	        window.setScene(gameScene); // Define below 
+	    	this.game.start(); 
+	        window.setScene(gameScene); 
 	    });
 	    
 	    startPane.setAlignment(Pos.CENTER);
@@ -113,7 +109,7 @@ public class Main extends Application
 	    introScene = new Scene( mainPane, 500,500);
 	    
 	    
-	    //---------Defining the game Scene with a board 
+	    // Defining the game Scene with a game board 
 	    GridPane board = new GridPane();
     	board.setStyle("-fx-background-color: #000b3d");
     	// Add base circles on the grid
@@ -232,15 +228,5 @@ public class Main extends Application
 		if (can_continue == false) {
 			show_result(board);
 		}
-	}
-	
-	private void createGameScene() {
-		
-	}
-	
-	private void drop_piece(Player player,int col)
-	{
-		
-		//switch 
 	}
 }
