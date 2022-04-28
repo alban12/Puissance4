@@ -176,8 +176,10 @@ public class Main extends Application
 
 		ButtonType buttonTypeOne = new ButtonType("Restart");
 		ButtonType buttonTypeTwo = new ButtonType("Quit");
+		ButtonType buttonTypeThree = new ButtonType("Change player 1 type");
+		ButtonType buttonTypeFour = new ButtonType("Change player 2 type");
 
-		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
+		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo, buttonTypeThree, buttonTypeFour);
 		Optional<ButtonType> result = alert.showAndWait();
 		if (result.get() == buttonTypeOne){
 	    	for(int col=0;col<7;col++) {
