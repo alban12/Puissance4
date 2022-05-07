@@ -4,9 +4,9 @@ A Connect4 game implemented with JavaFX that contains AI state-of-the-art agents
 # Installation 
 
 Clone the repository and link it to your IDE.
+
 # Usage 
 
 You can launch the GUI by running the main class, then, you will be guided in the menu
 
-# Licence 
-Apache 2.0
+
