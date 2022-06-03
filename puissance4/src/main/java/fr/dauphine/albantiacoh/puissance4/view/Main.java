@@ -176,10 +176,8 @@ public class Main extends Application
 
 		ButtonType buttonTypeOne = new ButtonType("Restart");
 		ButtonType buttonTypeTwo = new ButtonType("Quit");
-		ButtonType buttonTypeThree = new ButtonType("Change player 1 type");
-		ButtonType buttonTypeFour = new ButtonType("Change player 2 type");
 
-		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo, buttonTypeThree, buttonTypeFour);
+		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
 		Optional<ButtonType> result = alert.showAndWait();
 		if (result.get() == buttonTypeOne){
 	    	for(int col=0;col<7;col++) {
@@ -199,7 +197,24 @@ public class Main extends Application
 	    	this.game = game;
 	    	this.game.start();
 		} else {
-		    System.exit(0);
+			for(int col=0;col<7;col++) {
+	    		for(int row=0;row<6;row++)
+	    		{
+	    			Circle circle = new Circle();
+	    			circle.setCenterX(100.0f);
+	    			circle.setCenterY(100.0f);
+	    			circle.setRadius(50.0f);
+	    			circle.setStyle("-fx-background-color: #000b2a; -fx-border-width: 1; -fx-border-color: #022759 ");
+	    			board.add(circle, col, row);
+	    		}
+	    	}  
+		    int p1=0;
+		    int p2=1;
+	    	Game game = new Game(6, 7, 4, p1, p2);
+	    	this.game = game;
+	    	this.game.start();
+		    this.window.setScene( introScene );
+		    this.window.show();
 		}
 		
 	}
