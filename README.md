@@ -1,5 +1,5 @@
-# Puissance4 
-A Connect4 game implemented with JavaFX that contains AI state-of-the-art agents implemented for differents level of difficulties.
+# Connect 4 
+An implementaation of the game Connect 4 using JavaFX with state-of-the-art AI agents 
 
 # Installation 
 
@@ -9,4 +9,7 @@ Clone the repository and link it to your IDE.
 
 You can launch the GUI by running the main class, then, you will be guided in the menu
 
+# Licence
+
+GNU General Public License 
 
